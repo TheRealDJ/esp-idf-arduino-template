@@ -15,5 +15,5 @@
  - Added ```list(APPEND CMAKE_EXE_LINKER_FLAGS "-T esp32.rom.redefined.ld")```
 
 ### main/CMakeLists.txt
- - When creating a function that updates a pointer, I was getting an error due to gcc default unused-but-set-parameter
- - Added ```string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-but-set-parameter")``` to main/CMakeLists.txt
+ - When compiling code with a function that updates a pointer, I was getting an error due to gcc default ```-Werror=unused-but-set-parameter```
+ - Added ```string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-but-set-parameter")```
