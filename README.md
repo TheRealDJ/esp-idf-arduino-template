@@ -8,3 +8,12 @@
  - Enabled mbedTls PSK (MBEDTLS_PSK_MODES) and key exchange ciphersuites (MBEDTLS_KEY_EXCHANGE_*)
  - Changed RTOS tick rate to 1000 Hz (FREERTOS_HZ)
  - Enabled Arduino autostart - call setup() and loop() as an Arduino project does (AUTOSTART_ARDUINO)
+
+## cmake additions
+### CMakeLists.txt
+ - esp32.rom.redefined.l was not being linked
+ - Added ```list(APPEND CMAKE_EXE_LINKER_FLAGS "-T esp32.rom.redefined.ld")```
+
+### main/CMakeLists.txt
+ - When creating a function that updates a pointer, I was getting an error due to gcc default unused-but-set-parameter
+ - Added ```string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-but-set-parameter")``` to main/CMakeLists.txt
