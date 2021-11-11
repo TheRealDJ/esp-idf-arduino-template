@@ -11,7 +11,7 @@
 
 ## cmake additions
 ### CMakeLists.txt
- - esp32.rom.redefined.l was not being linked
+ - esp32.rom.redefined.ld was not being linked
  - Added ```list(APPEND CMAKE_EXE_LINKER_FLAGS "-T esp32.rom.redefined.ld")```
 
 ### main/CMakeLists.txt
